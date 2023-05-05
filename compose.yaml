@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  rust:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: root
+    volumes:
+      - type: bind
+        source: ./
+        target: /main
+    working_dir: /main
+    tty: true
+    stdin_open: true
